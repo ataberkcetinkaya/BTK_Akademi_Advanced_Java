@@ -12,7 +12,7 @@ public class CustomerManager {
 
 	public void add() {
 		//iþ kurallarý
-		customerDal.add();
+		//customerDal.add();
 		// iþ kurallarindan geçiyorsa git ve customerDal'da ki db eklemeyi çaðýr.
 	}
 }
