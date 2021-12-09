@@ -12,4 +12,13 @@
 	<!--database isminde bir bean talebinde bulunursa, arkaplanda MySqlCustomerDal'ı newliyor ve newlenmis datayi bize veriyor'-->
 	<!--ileride baska bir müsterimiz oracle veritabanini isterse MySqlCustomerDal kismini Oracle ile değistirebiliriz-->
 	</bean>
+	
+	<bean id="service" class="springIntro.CustomerManager">
+	<!--Biri bizden service isteğinde bulunursa ona direkt manager'ı ver.-->
+		<constructor-arg ref = "database"/>
+		<!--reference geç, kim için? database'de kim verildiyse onun için-->
+		
+		<!-- CUSTOMERMANAGER EGER OLURDA ICERISINDE BİR TIP İSTERSE, (ICUSTOMERDAL ISTIYOR) -->
+		<!-- SPRING HEMEN GELİYOR VE BAKIYOR REF="DATABASE" KIM? MYSQLCUSTOMERDAL'I GORUYOR -->
+	</bean>
 </beans>
