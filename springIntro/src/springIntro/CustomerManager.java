@@ -6,7 +6,13 @@ public class CustomerManager implements ICustomerService {
 	
 	//generate constructor using fields
 	//CustomerManager parametre olarak bir ICustomerDal istiyor ve onun add()'ini çalýþtýrýyor
-	public CustomerManager(ICustomerDal customerDal) {
+	//constructor injection
+	public CustomerManager(ICustomerDal customerDal) { 
+		this.customerDal = customerDal;
+	}
+	
+	//setter injection
+	public void setCustomerDal(ICustomerDal customerDal) {
 		this.customerDal = customerDal;
 	}
 

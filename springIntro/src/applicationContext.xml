@@ -18,6 +18,8 @@
 		<constructor-arg ref = "database"/>
 		<!--reference geç, kim için? database'de kim verildiyse onun için-->
 		
+		<property name="customerDal" ref="database"></property> <!-- setter injection -->
+		
 		<!-- CUSTOMERMANAGER EGER OLURDA ICERISINDE BİR TIP İSTERSE, (ICUSTOMERDAL ISTIYOR) -->
 		<!-- SPRING HEMEN GELİYOR VE BAKIYOR REF="DATABASE" KIM? MYSQLCUSTOMERDAL'I GORUYOR -->
 	</bean>
