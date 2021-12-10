@@ -11,6 +11,7 @@
 	<!--database isminde bir talep gelirse ona MySQL üret. Yani MySQL configuration ile çalıstigini varsayalim'-->
 	<!--database isminde bir bean talebinde bulunursa, arkaplanda MySqlCustomerDal'ı newliyor ve newlenmis datayi bize veriyor'-->
 	<!--ileride baska bir müsterimiz oracle veritabanini isterse MySqlCustomerDal kismini Oracle ile değistirebiliriz-->
+		<property name="connectionString" value="--Oracle String--"></property>
 	</bean>
 	
 	<bean id="service" class="springIntro.CustomerManager">
