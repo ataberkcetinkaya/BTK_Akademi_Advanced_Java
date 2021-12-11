@@ -10,7 +10,7 @@ public class Main {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		
-		ICustomerDal customerDal = context.getBean("service", ICustomerDal.class);
+		ICustomerDal customerDal = context.getBean("database", ICustomerDal.class);
 		
 		
 		customerDal.add();
