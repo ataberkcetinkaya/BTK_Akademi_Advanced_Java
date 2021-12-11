@@ -11,4 +11,9 @@ public class IocConfig {
 	public ICustomerDal database() { //ICustomerDal çünkü msSql'de mySql'de onu implemente eder.
 		return new MySqlCustomerDal();
 	}
+	
+	@Bean
+	public ICustomerService service() {
+		return new CustomerManager(database());
+	}
 }

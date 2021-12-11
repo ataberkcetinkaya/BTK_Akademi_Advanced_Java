@@ -10,10 +10,10 @@ public class Main {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(IocConfig.class);
 		//ilgili config dosyasina gidecek.
 		
-		ICustomerDal customerDal = context.getBean("database", ICustomerDal.class);
+		ICustomerService customerService = context.getBean("service", ICustomerService.class);
 		
 		
-		customerDal.add();
+		customerService.add();
 	
 	
 	}
