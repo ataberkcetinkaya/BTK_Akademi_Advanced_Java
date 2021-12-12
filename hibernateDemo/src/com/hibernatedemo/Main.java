@@ -21,11 +21,13 @@ public class Main {
 			
 												//"from City c where c.countryCode='TUR' AND c.district='Marmara'"
 												//"from City c where c.name LIKE '%ur%'"
-			List<City> cities = session.createQuery("from City c ORDER BY c.name DESC").getResultList();
-									//Select * from city ile ayni anlamdadir
+												//"from City c ORDER BY c.name DESC"s
+			List<String> countryCodes = session.createQuery("select countryCode from City c GROUP BY c.countryCode").getResultList();
+									
+			//("from City").getResultList(); > Select * from city ile ayni anlamdadir
 					
-			for(City city:cities) {
-				System.out.println(city.getName());
+			for(String countryCode:countryCodes) {
+				System.out.println(countryCode);
 			}
 			
 			session.getTransaction().commit();
