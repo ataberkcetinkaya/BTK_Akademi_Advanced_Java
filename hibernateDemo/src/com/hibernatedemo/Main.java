@@ -20,7 +20,8 @@ public class Main {
 			session.beginTransaction();
 			
 												//"from City c where c.countryCode='TUR' AND c.district='Marmara'"
-			List<City> cities = session.createQuery("from City c where c.name LIKE '%ur%'").getResultList();
+												//"from City c where c.name LIKE '%ur%'"
+			List<City> cities = session.createQuery("from City c ORDER BY c.name DESC").getResultList();
 									//Select * from city ile ayni anlamdadir
 					
 			for(City city:cities) {
