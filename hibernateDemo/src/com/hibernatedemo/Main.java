@@ -19,7 +19,8 @@ public class Main {
 		try {
 			session.beginTransaction();
 			
-			List<City> cities = session.createQuery("from City").getResultList();
+												//"from City c where c.countryCode='TUR' AND c.district='Marmara'"
+			List<City> cities = session.createQuery("from City c where c.name LIKE '%ur%'").getResultList();
 									//Select * from city ile ayni anlamdadir
 					
 			for(City city:cities) {
