@@ -22,15 +22,24 @@ public class Main {
 												//"from City c where c.countryCode='TUR' AND c.district='Marmara'"
 												//"from City c where c.name LIKE '%ur%'"
 												//"from City c ORDER BY c.name DESC"s
-			List<String> countryCodes = session.createQuery("select countryCode from City c GROUP BY c.countryCode").getResultList();
+			//List<String> countryCodes = session.createQuery("select countryCode from City c GROUP BY c.countryCode").getResultList();
 									
 			//("from City").getResultList(); > Select * from city ile ayni anlamdadir
 					
-			for(String countryCode:countryCodes) {
-				System.out.println(countryCode);
-			}
+			//for(String countryCode:countryCodes) {
+			//	System.out.println(countryCode);
+			//}
 			
+			City city = new City();
+			city.setName("Bursa16");
+			city.setCountryCode("TUR");
+			city.setDistrict("Marmara");
+			city.setPopulation(1616);
+			
+			session.save(city);
+		
 			session.getTransaction().commit();
+			System.out.println("Data saved.");
 			
 		}	finally {
 			factory.close();
