@@ -22,24 +22,31 @@ public class Main {
 												//"from City c where c.countryCode='TUR' AND c.district='Marmara'"
 												//"from City c where c.name LIKE '%ur%'"
 												//"from City c ORDER BY c.name DESC"s
+									//List<City> cities = session.createQuery("from City c ORDER BY c.name DESC") > GROUPBY'DAN ONCESI
+			
 			//List<String> countryCodes = session.createQuery("select countryCode from City c GROUP BY c.countryCode").getResultList();
 									
 			//("from City").getResultList(); > Select * from city ile ayni anlamdadir
 					
-			//for(String countryCode:countryCodes) {
-			//	System.out.println(countryCode);
+			//for(String countryCode:countryCodes) {   //for (City city:cities) {        > GROUPBY'DAN ONCESI
+			//	System.out.println(countryCode);		Sys.out.println(city.getName()); > GROUPBY'DAN ONCESI
 			//}
 			
-			City city = new City();
-			city.setName("Bursa16");
-			city.setCountryCode("TUR");
-			city.setDistrict("Marmara");
-			city.setPopulation(1616);
+			//INSERT
+//			City city = new City();
+//			city.setName("Bursa16");
+//			city.setCountryCode("TUR");
+//			city.setDistrict("Marmara");
+//			city.setPopulation(1616);
+//			session.save(city);
 			
-			session.save(city);
+			//UPDATE
+			City city = session.get(City.class, 4091);
+			city.setName("BursaBudo");
+			session.save(city); //session save ile yapilan islemleri kaydet.
 		
 			session.getTransaction().commit();
-			System.out.println("Data saved.");
+			System.out.println("Data updated.");
 			
 		}	finally {
 			factory.close();
