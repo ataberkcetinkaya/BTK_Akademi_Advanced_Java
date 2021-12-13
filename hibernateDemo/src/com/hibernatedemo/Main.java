@@ -25,7 +25,9 @@ public class Main {
 									//List<City> cities = session.createQuery("from City c ORDER BY c.name DESC") > GROUPBY'DAN ONCESI
 			
 			//List<String> countryCodes = session.createQuery("select countryCode from City c GROUP BY c.countryCode").getResultList();
-									
+															//bu kisimdaki sorgu degistirilip update, delete vs. yazilabilir
+															//ve getResultList() yerine executeUpdate vs. kullanilabilir.
+			
 			//("from City").getResultList(); > Select * from city ile ayni anlamdadir
 					
 			//for(String countryCode:countryCodes) {   //for (City city:cities) {        > GROUPBY'DAN ONCESI
@@ -41,12 +43,16 @@ public class Main {
 //			session.save(city);
 			
 			//UPDATE
+//			City city = session.get(City.class, 4091);
+//			city.setName("BursaBudo");
+//			session.save(city); //session save ile yapilan islemleri kaydet.
+			
+			//DELETE
 			City city = session.get(City.class, 4091);
-			city.setName("BursaBudo");
-			session.save(city); //session save ile yapilan islemleri kaydet.
-		
+			session.delete(city);
+			
 			session.getTransaction().commit();
-			System.out.println("Data updated.");
+			System.out.println("Data deleted.");
 			
 		}	finally {
 			factory.close();
