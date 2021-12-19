@@ -33,20 +33,27 @@ public class HibernateCityDal implements ICityDal {
 
 	@Override
 	public void add(City city) {
-		// TODO Auto-generated method stub
-		
+		Session session = entityManager.unwrap(Session.class);
+		session.saveOrUpdate(city); //id'ye göre add veya update yapabilir	
 	}
 
 	@Override
 	public void update(City city) {
-		// TODO Auto-generated method stub
-		
+		Session session = entityManager.unwrap(Session.class);
+		session.saveOrUpdate(city); //id'ye göre add veya update yapabilir
 	}
 
 	@Override
 	public void delete(City city) {
-		// TODO Auto-generated method stub
-		
+		Session session = entityManager.unwrap(Session.class);
+		session.delete(city);
+	}
+
+	@Override
+	public City getById(int id) {
+		Session session = entityManager.unwrap(Session.class);
+		City city = session.get(City.class, id);
+		return city;
 	}
 
 }
