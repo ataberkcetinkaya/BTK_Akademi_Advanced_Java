@@ -46,7 +46,8 @@ public class HibernateCityDal implements ICityDal {
 	@Override
 	public void delete(City city) {
 		Session session = entityManager.unwrap(Session.class);
-		session.delete(city);
+		City cityToDelete = session.get(City.class, city.getId());
+		session.delete(cityToDelete);
 	}
 
 	@Override

@@ -14,7 +14,7 @@ public class City {
 	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "countryCode")
+	@Column(name = "countrycode") //country(c)ode > c'si kücük, db'den null hatasi geldigi için
 	private String countryCode;
 	
 	@Column(name = "district")
