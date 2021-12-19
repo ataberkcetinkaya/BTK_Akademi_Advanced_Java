@@ -31,6 +31,8 @@ public class City {
 		this.district = district;
 		this.population = population;
 	}
+	
+	public City() {} //default constructor (parametresiz)
 
 	public int getId() {
 		return id;

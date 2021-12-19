@@ -6,11 +6,13 @@ import javax.persistence.EntityManager;
 
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.java1advanced.hibernateAndJpa.Entities.City;
 
 //JPA - ORM
+@Repository //ICityDal implemente hatasi için
 public class HibernateCityDal implements ICityDal {
 
 	private EntityManager entityManager; //session kismina karsilik
